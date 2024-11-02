@@ -4,6 +4,20 @@ function onReady(){
 }
 
 
+//CREATE A newEmployee variable
+let newEmployee = {
+    firstName: document.getElementById("firstName").value,
+    lastName: document.getElementById("lastName").value,
+    employeeID: Number(document.getElementById("idNumber").value),
+    title: document.getElementById("employeeTitle").value,
+    annualSalary: Number(document.getElementById("annualSalary").value)
+}
+
+// use form input in an array to create newEmployee
+
+const arrayOfEmployees = []
+
+
 // function to add new employee to the table
 
 // EXAMPLE FROM GROUP ASSIGNMENT FOR REFERENCE, NOT TOTALLY RELEVANT
@@ -15,7 +29,7 @@ function onReady(){
 
 function addEmployee(event){
     const emojiHome = document.querySelector("#emojiHome")
-    console.log('emojiHome is: ', emojiHome)
+    console.log('newEmployee is: ', newEmployee)
      emojiHome.innerHTML += `<span>🔥</span>`
   }
 
