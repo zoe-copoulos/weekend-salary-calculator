@@ -5,6 +5,15 @@ function onReady(){
 
 //defauly monthly cost is 0 to start
 let totalMonthlyCost = 0
+// an employee's monthly cost (salary) will be assigned to
+const monthlySalary = salaryInput / 12
+
+// monthly cost will be updated with, just don't know where to put it
+// totalMonthlyCost += monthlySalary
+
+if (totalMonthlyCost > 20000) {
+
+}
 
 //CREATE A newEmployee variable
 // let newEmployee = {
@@ -48,6 +57,24 @@ let salaryInput = document.getElementById("salaryInput").value
 // // Add text input/author input to appropriate cells
 // cell1.innerHTML += document.getElementById("textInput").value;
 // cell2.innerHTML += document.getElementById("authorInput").value;
+
+
+// creating new rows when form is submitted, based on above
+const table = document.getElementById("salaryTable");
+const newRow = table.insertRow();
+const cell1 = newRow.insertCell(0);
+const cell2 = newRow.insertCell(1);
+const cell3 = newRow.insertCell(2);
+const cell4 = newRow.insertCell(3);
+const cell5 = newRow.insertCell(4);
+const cell6 = newRow.insertCell(5);
+
+// populate rows with info from the form and input variables
+cell1.innerHTML += document.getElementById("firstNameInput").value;
+cell2.innerHTML += document.getElementById("lastNameInput").value;
+cell3.innerHTML += document.getElementById("idInput").value;
+cell4.innerHTML += document.getElementById("titleInput").value;
+cell5.innerHTML += document.getElementById("salaryInput").value;
 
 
 // function to add new employee to the table
