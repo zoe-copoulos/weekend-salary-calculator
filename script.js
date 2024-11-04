@@ -1,31 +1,22 @@
-//onReady function makes sure js is loaded before running functions
-function onReady(){
-    console.log('Javascript is working!');
-}
+//removed onReady
 
 //defauly monthly cost is 0 to start
 let totalMonthlyCost = 0
-// an employee's monthly cost (salary) will be assigned to
-const monthlySalary = salaryInput / 12
 
-// monthly cost will be updated with, just don't know where to put it
-// totalMonthlyCost += monthlySalary
 
-if (totalMonthlyCost > 20000) {
+//function to submit an employee to the table
+function submitEmployee(event){
+    event.preventDefault()
+    console.log("submitEmployee called with event:", event.target)
 
-}
-
-//CREATE A newEmployee variable
-// let newEmployee = {
-//     firstName: document.getElementById("firstName").value,
-//     lastName: document.getElementById("lastName").value,
-//     employeeID: Number(document.getElementById("idNumber").value),
-//     title: document.getElementById("employeeTitle").value,
-//     annualSalary: Number(document.getElementById("annualSalary").value)
-// }
-
-// Trying the using variables for eah form input route but keeping the above
-//just in case 
+//right, I was missing getting actual information from the form into the table
+// had these in a separate function
+// They also had some parenthese typos
+console.log("First name ", document.getElementById("firstNameInput").value)
+console.log("Last name ", document.getElementById("lastNameInput").value)
+console.log("ID # ", document.getElementById("idInput").value)
+console.log("Job title ", document.getElementById("titleInput").value)
+console.log("Annual salary ", document.getElementById("salaryInput").value)
 
 let firstNameInput = document.getElementById("firstNameInput").value
 let lastNameInput = document.getElementById("lastNameInput").value
@@ -33,34 +24,23 @@ let idInput = document.getElementById("idInput").value
 let titleInput = document.getElementById("titleInput").value
 let salaryInput = document.getElementById("salaryInput").value
 
-// use form input in an array to create newEmployee
-// still not over the idea of using an array in this way, but commenting out
-//to try something new
+}
+
+//Duh, I need to call the function.  wow.
+console.log("salaryTable from Dom:", document.getElementById("employeeTable"))
 
 
-// const arrayOfEmployees = []
+// an employee's monthly cost (salary) will be assigned to
+const monthlyCost = salaryInput / 12
 
-// creating new list items in a table from form input 
-// from friday group assignment
+// monthly cost will be updated with, just don't know where to put it
+totalMonthlyCost += monthlyCost
 
-// const table = document.getElementById("affTable");
-
-// // table.insertRow will push new values to the bottom of the table
-// const row = table.insertRow(-1);
-// // pushes value to the 0th position in table
-// const cell1 = row.insertCell(0);
-// // noticing that row.insertCell(0), and row.insertCell(1) works - why is this?
-// const cell2 = row.insertCell(1);
-// // 
-// const cell3 = row.insertCell(2);
-
-// // Add text input/author input to appropriate cells
-// cell1.innerHTML += document.getElementById("textInput").value;
-// cell2.innerHTML += document.getElementById("authorInput").value;
+//fixed some variables assigned incorrectly
 
 
-// creating new rows when form is submitted, based on above
-const table = document.getElementById("salaryTable");
+// creating new rows when form is submitted, based on friday's group project
+const table = document.getElementById("employeeTable");
 const newRow = table.insertRow();
 const cell1 = newRow.insertCell(0);
 const cell2 = newRow.insertCell(1);
@@ -77,28 +57,23 @@ cell4.innerHTML += document.getElementById("titleInput").value;
 cell5.innerHTML += document.getElementById("salaryInput").value;
 
 
+
 // function to add new employee to the table
 
-// EXAMPLE FROM GROUP ASSIGNMENT FOR REFERENCE, NOT TOTALLY RELEVANT
-//function addEmployee(){
-//     const emojiHome = document.querySelector("#emojiHome")
-//     console.log('emojiHome is: ', emojiHome)
-//      emojiHome.innerHTML += `<span>🔥</span>`
-//   }
 
-function addEmployee(event){
-    const emojiHome = document.querySelector("#emojiHome")
-    console.log('newEmployee is: ', newEmployee)
-     emojiHome.innerHTML += `<span>🔥</span>`
-  }
+// commented this out just in case I need something but logs are now in correct function
+
+// function submitEmployee(event){
+// event.preventDefault()
+// console.log("submitEmployee called with event:", event.target)
 
 
-// function to clear form 
-
-function submitEmployee(event){
-event.preventDefault()
-console.log("submitEmployee called with event:", event.target)
-}
+// console.log("First name ", document.getElementById("firstNameInput".value))
+// console.log("Last name ", document.getElementById("lastNameInput".value))
+// console.log("ID # ", document.getElementById("idInput".value))
+// console.log("Job title ", document.getElementById("titleInput".value))
+// console.log("Annual salary ", document.getElementById("salaryInput".value))
+// }
 
 // function to update total cost
 
@@ -108,14 +83,35 @@ function totalCost(){
 
 // function to see if over budget
 
-function checkBudget(){
+// function checkBudget(totalMonthlyCost){
+//     let footer = document.getElementById("foot")
+//     if(monthlyCost > 20000 && !footer.classList.contains("over-budget")){
+//         footer.classList.add("over-budget")
+//     }
+//     else if(monthlyCost <= 20000 && footer.classList.contains("over-budget")){
+//         footer.classList.remove("over-budget")
+//     }
+// }
 
+
+// improved this function with the help of Phind
+
+function checkBudget(totalMonthlyCost) {
+    const footer = document.getElementById("foot");
+    
+    if (!footer) {
+        console.error("Footer element not found");
+        return;
+    }
+    
+    if (monthlyCost > 20000 && !footer.classList.contains("over-budget")) {
+        footer.classList.add("over-budget");
+    } else if (monthlyCost <= 20000 && footer.classList.contains("over-budget")) {
+        footer.classList.remove("over-budget");
+    }
 }
-
 // function to remove an employee from table
 
-function removeEmployee(){
-    
+function removeEmployee(event){
+
 }
-
-

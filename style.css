@@ -31,7 +31,6 @@ html, body {
     background-color: #7a7a7a;
     text-align: center;
   }
-  
 
 
 
@@ -89,8 +88,8 @@ table {
 
 
 /* need a style for when over budget */
-
-
-
+over-budget {
+  color: red
+}
 
 
