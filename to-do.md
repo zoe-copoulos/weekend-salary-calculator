@@ -5,7 +5,7 @@ create an application that records employee salaries and adds salaries up to rep
 
     ✅Create CSS file
 
-        -CSS class for footer element if over-budget (RED)
+        ✅CSS class for footer element if over-budget (RED)
 
     ✅Create Javascript file
 
