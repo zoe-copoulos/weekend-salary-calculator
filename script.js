@@ -3,10 +3,13 @@
 //defauly monthly cost is 0 to start
 let totalMonthlyCost = 0
 
+//array to contain employees
+let allEmployees =[];
+
 
 //function to submit an employee to the table
 function submitEmployee(event){
-    event.preventDefault()
+    event.preventDefault();
     console.log("submitEmployee called with event:", event.target)
 
 //right, I was missing getting actual information from the form into the table
@@ -43,6 +46,13 @@ let idInput = document.getElementById("idInput").value
 let titleInput = document.getElementById("titleInput").value
 let salaryInput = document.getElementById("salaryInput").value
 }
+
+//create a variable for new employees
+let newEmployee = {};
+
+
+//populate employee array
+allEmployees.push(newEmployee)
 
 //Duh, I need to call the function.  wow.
 console.log("salaryTable from Dom:", document.getElementById("employeeTable"))
