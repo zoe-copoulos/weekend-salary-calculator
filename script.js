@@ -12,11 +12,11 @@ function submitEmployee(event){
 //right, I was missing getting actual information from the form into the table
 // had these in a separate function
 // They also had some parenthese typos
-console.log("First name ", document.getElementById("firstNameInput").value)
-console.log("Last name ", document.getElementById("lastNameInput").value)
-console.log("ID # ", document.getElementById("idInput").value)
-console.log("Job title ", document.getElementById("titleInput").value)
-console.log("Annual salary ", document.getElementById("salaryInput").value)
+console.log("First name ", document.getElementById("firstName").value)
+console.log("Last name ", document.getElementById("lastName").value)
+console.log("ID # ", document.getElementById("idNumber").value)
+console.log("Job title ", document.getElementById("employeeTitle").value)
+console.log("Annual salary ", document.getElementById("annualSalary").value)
 
 
 // creating new rows when form is submitted, based on friday's group project
@@ -58,23 +58,6 @@ totalMonthlyCost += monthlyCost
 
 
 
-// function to add new employee to the table
-
-
-// commented this out just in case I need something but logs are now in correct function
-
-// function submitEmployee(event){
-// event.preventDefault()
-// console.log("submitEmployee called with event:", event.target)
-
-
-// console.log("First name ", document.getElementById("firstNameInput".value))
-// console.log("Last name ", document.getElementById("lastNameInput".value))
-// console.log("ID # ", document.getElementById("idInput".value))
-// console.log("Job title ", document.getElementById("titleInput".value))
-// console.log("Annual salary ", document.getElementById("salaryInput".value))
-// }
-
 // function to update total cost
 
 function totalCost(){
@@ -82,6 +65,12 @@ function totalCost(){
 }
 
 // function to see if over budget
+
+if (totalMonthlySalary > 20000) {
+    footer.classList.add("over-budget");}
+else {
+    footer.classList.remove("over-budget");
+}
 
 // function checkBudget(totalMonthlyCost){
 //     let footer = document.getElementById("foot")
