@@ -18,12 +18,30 @@ console.log("ID # ", document.getElementById("idInput").value)
 console.log("Job title ", document.getElementById("titleInput").value)
 console.log("Annual salary ", document.getElementById("salaryInput").value)
 
+
+// creating new rows when form is submitted, based on friday's group project
+const table = document.getElementById("employeeTable");
+const newRow = table.insertRow();
+const cell1 = newRow.insertCell(0);
+const cell2 = newRow.insertCell(1);
+const cell3 = newRow.insertCell(2);
+const cell4 = newRow.insertCell(3);
+const cell5 = newRow.insertCell(4);
+const cell6 = newRow.insertCell(5);
+
+
+// populate rows with info from the form and input variables
+cell1.innerHTML += document.getElementById("firstName").value;
+cell2.innerHTML += document.getElementById("lastName").value;
+cell3.innerHTML += document.getElementById("idNumber").value;
+cell4.innerHTML += document.getElementById("employeeTitle").value;
+cell5.innerHTML += document.getElementById("annualSalary").value;
+
 let firstNameInput = document.getElementById("firstNameInput").value
 let lastNameInput = document.getElementById("lastNameInput").value
 let idInput = document.getElementById("idInput").value
 let titleInput = document.getElementById("titleInput").value
 let salaryInput = document.getElementById("salaryInput").value
-
 }
 
 //Duh, I need to call the function.  wow.
@@ -37,24 +55,6 @@ const monthlyCost = salaryInput / 12
 totalMonthlyCost += monthlyCost
 
 //fixed some variables assigned incorrectly
-
-
-// creating new rows when form is submitted, based on friday's group project
-const table = document.getElementById("employeeTable");
-const newRow = table.insertRow();
-const cell1 = newRow.insertCell(0);
-const cell2 = newRow.insertCell(1);
-const cell3 = newRow.insertCell(2);
-const cell4 = newRow.insertCell(3);
-const cell5 = newRow.insertCell(4);
-const cell6 = newRow.insertCell(5);
-
-// populate rows with info from the form and input variables
-cell1.innerHTML += document.getElementById("firstNameInput").value;
-cell2.innerHTML += document.getElementById("lastNameInput").value;
-cell3.innerHTML += document.getElementById("idInput").value;
-cell4.innerHTML += document.getElementById("titleInput").value;
-cell5.innerHTML += document.getElementById("salaryInput").value;
 
 
 
